@@ -348,7 +348,7 @@ function createChunks(/* arr, chunkSize */) {
  *    generateOdds(5) => [ 1, 3, 5, 7, 9 ]
  */
 function generateOdds(len) {
-  const newArr = Array.from({ length: len }, (v, k) => (1 + k * 2));
+  const newArr = Array.from({ length: len }, (v, k) => 1 + k * 2);
   return newArr;
 }
 
@@ -382,7 +382,7 @@ function getElementByIndices(/* arr, indices */) {
  */
 function getFalsyValuesCount(arr) {
   const newArr = arr.filter(Boolean);
-  return (arr.length - newArr.length);
+  return arr.length - newArr.length;
 }
 
 /**
@@ -404,8 +404,13 @@ function getFalsyValuesCount(arr) {
  *                              [0,0,0,0,1]]
  */
 function getIdentityMatrix(n) {
-  const matrix = [...Array(n).fill(0)].map(
-    (el, i) => Array(n).fill(0).map((el2, j) => { if (i === j) return 1; return 0; }),
+  const matrix = [...Array(n).fill(0)].map((el, i) =>
+    Array(n)
+      .fill(0)
+      .map((el2, j) => {
+        if (i === j) return 1;
+        return 0;
+      })
   );
   return matrix;
 }
@@ -540,17 +545,38 @@ function sortDigitNamesByNumericOrder(arr) {
   const arrNumb = arr.map((el) => {
     let temp = '';
     switch (el) {
-      case 'zero': temp = 0; break;
-      case 'one': temp = 1; break;
-      case 'two': temp = 2; break;
-      case 'three': temp = 3; break;
-      case 'four': temp = 4; break;
-      case 'five': temp = 5; break;
-      case 'six': temp = 6; break;
-      case 'seven': temp = 7; break;
-      case 'eight': temp = 8; break;
-      case 'nine': temp = 9; break;
-      default: break;
+      case 'zero':
+        temp = 0;
+        break;
+      case 'one':
+        temp = 1;
+        break;
+      case 'two':
+        temp = 2;
+        break;
+      case 'three':
+        temp = 3;
+        break;
+      case 'four':
+        temp = 4;
+        break;
+      case 'five':
+        temp = 5;
+        break;
+      case 'six':
+        temp = 6;
+        break;
+      case 'seven':
+        temp = 7;
+        break;
+      case 'eight':
+        temp = 8;
+        break;
+      case 'nine':
+        temp = 9;
+        break;
+      default:
+        break;
     }
     return temp;
   });
@@ -558,17 +584,38 @@ function sortDigitNamesByNumericOrder(arr) {
   const newArr = arrNumb.map((el) => {
     let temp = '';
     switch (el) {
-      case 0: temp = 'zero'; break;
-      case 1: temp = 'one'; break;
-      case 2: temp = 'two'; break;
-      case 3: temp = 'three'; break;
-      case 4: temp = 'four'; break;
-      case 5: temp = 'five'; break;
-      case 6: temp = 'six'; break;
-      case 7: temp = 'seven'; break;
-      case 8: temp = 'eight'; break;
-      case 9: temp = 'nine'; break;
-      default: break;
+      case 0:
+        temp = 'zero';
+        break;
+      case 1:
+        temp = 'one';
+        break;
+      case 2:
+        temp = 'two';
+        break;
+      case 3:
+        temp = 'three';
+        break;
+      case 4:
+        temp = 'four';
+        break;
+      case 5:
+        temp = 'five';
+        break;
+      case 6:
+        temp = 'six';
+        break;
+      case 7:
+        temp = 'seven';
+        break;
+      case 8:
+        temp = 'eight';
+        break;
+      case 9:
+        temp = 'nine';
+        break;
+      default:
+        break;
     }
     return temp;
   });
