@@ -41,17 +41,17 @@ function getIntervalArray(start, end) {
 function sumArrays(arr1, arr2) {
   let newArr = [];
   if (arr1.length > arr2.length) {
-    newArr = arr1.map(function (el, i) {
+    newArr = arr1.map(function a(el, i) {
       if (Number.isNaN(el + arr2[i])) return el;
       return el + arr2[i];
     });
   } else if (arr1.length < arr2.length) {
-    newArr = arr2.map(function (el, i) {
+    newArr = arr2.map(function a(el, i) {
       if (Number.isNaN(el + arr1[i])) return el;
       return el + arr1[i];
     });
   } else
-    newArr = arr1.map(function (el, i) {
+    newArr = arr1.map(function a(el, i) {
       return el + arr2[i];
     });
   return newArr;
@@ -140,7 +140,7 @@ function getStringsLength(arr) {
  */
 function getAverage(arr) {
   if (arr.length === 0) return 0;
-  const sumRes = arr.reduce(function (sum, el) {
+  const sumRes = arr.reduce(function a(sum, el) {
     return sum + el;
   }, 0);
   return parseFloat((sumRes / arr.length).toFixed(2));
@@ -157,10 +157,10 @@ function getAverage(arr) {
  *    isSameLength(['cat', 'dog', 'elephant']) => false
  */
 function isSameLength(arr) {
-  let newArr = arr.map(function (el) {
+  let newArr = arr.map(function a(el) {
     return el.length;
   });
-  newArr = newArr.sort(function (a, b) {
+  newArr = newArr.sort(function d(a, b) {
     return b - a;
   });
   return newArr[0] === arr[0].length;
@@ -178,7 +178,7 @@ function isSameLength(arr) {
  *    isValueEqualsIndex([10, 20, 30, 40, 50]) => false
  */
 function isValueEqualsIndex(arr) {
-  let newArr = arr.map(function (el, i) {
+  let newArr = arr.map(function a(el, i) {
     return el === i;
   });
   newArr = newArr.sort();
