@@ -38,8 +38,23 @@ function getIntervalArray(start, end) {
  *    sumArrays([10, 20, 30], [5, 10, 15]) => [15, 30, 45]
  *    sumArrays([-1, 0, 1], [1, 2, 3, 4]) => [0, 2, 4, 4]
  */
-function sumArrays(/* arr1, arr2 */) {
-  throw new Error('Not implemented');
+function sumArrays(arr1, arr2) {
+  let newArr = [];
+  if (arr1.length > arr2.length) {
+    newArr = arr1.map(function (el, i) {
+      if (Number.isNaN(el + arr2[i])) return el;
+      return el + arr2[i];
+    });
+  } else if (arr1.length < arr2.length) {
+    newArr = arr2.map(function (el, i) {
+      if (Number.isNaN(el + arr1[i])) return el;
+      return el + arr1[i];
+    });
+  } else
+    newArr = arr1.map(function (el, i) {
+      return el + arr2[i];
+    });
+  return newArr;
 }
 
 /**
