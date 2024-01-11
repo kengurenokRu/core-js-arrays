@@ -252,9 +252,10 @@ function getTail(arr, n) {
  *    doubleArray([]) => []
  */
 function doubleArray(arr) {
-  const newArr = arr;
+  /* const newArr = arr;
   newArr.push(...arr);
-  return newArr;
+  return newArr; */
+  return arr.concat(arr);
 }
 
 /**
