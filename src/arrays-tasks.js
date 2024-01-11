@@ -305,6 +305,10 @@ function distinct(arr) {
  *    createNDimensionalArray(1, 1) => [0]
  */
 function createNDimensionalArray(n, size) {
+  if (n > 1) {
+    const newArr = createNDimensionalArray(n - 1, size);
+    return new Array(size).fill(newArr);
+  }
   return new Array(size).fill(0);
 }
 
