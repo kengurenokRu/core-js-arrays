@@ -182,11 +182,14 @@ function isSameLength(arr) {
  *    isValueEqualsIndex([10, 20, 30, 40, 50]) => false
  */
 function isValueEqualsIndex(arr) {
-  let newArr = arr.map(function a(el, i) {
+  /* let newArr = arr.map(function a(el, i) {
     return el === i;
   });
   newArr = newArr.sort();
-  return newArr[newArr.length - 1];
+  return newArr[newArr.length - 1]; */
+  return arr.some(function a(el, i) {
+    return el === i;
+  });
 }
 
 /**
