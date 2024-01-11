@@ -270,8 +270,9 @@ function doubleArray(arr) {
  *    toStringList(['rock', 'paper', 'scissors']) => 'rock,paper,scissors'
  */
 function toStringList(arr) {
-  const newStr = arr.reduce((str, value) => `${str},${value}`, '');
-  return newStr.slice(1);
+  /* const newStr = arr.reduce((str, value) => `${str},${value}`, '');
+  return newStr.slice(1); */
+  return arr.join();
 }
 
 /**
