@@ -157,13 +157,17 @@ function getAverage(arr) {
  *    isSameLength(['cat', 'dog', 'elephant']) => false
  */
 function isSameLength(arr) {
-  let newArr = arr.map(function a(el) {
+  /* let newArr = arr.map(function a(el) {
     return el.length;
   });
   newArr = newArr.sort(function d(a, b) {
     return b - a;
   });
-  return newArr[0] === arr[0].length;
+  return newArr[0] === arr[0].length; */
+  const count = arr[0].length;
+  return arr.every(function a(el) {
+    return el.length === count;
+  });
 }
 
 /**
@@ -295,8 +299,8 @@ function distinct(arr) {
  *    createNDimensionalArray(4, 2) => [[[[0, 0], [0, 0]], [[0, 0], [0, 0]]], [[[0, 0], [0, 0]], [[0, 0], [0, 0]]]]
  *    createNDimensionalArray(1, 1) => [0]
  */
-function createNDimensionalArray(/* n, size */) {
-  throw new Error('Not implemented');
+function createNDimensionalArray(n, size) {
+  return new Array(size).fill(0);
 }
 
 /**
